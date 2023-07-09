@@ -218,7 +218,7 @@
 			\node (preprocessing) [right=of cleaning]
 			{Preprocessing};
 			\node (modelling) [right=of preprocessing] {Modelling};
-			\node (parameters) [above=of modelling] {Parameters};
+			\node (parameters) [above=of modelling] {(Hyper)parameters};
 			\node (evaluation) [right=of modelling] {Evaluation};
 
 			\node (data) [draw, dashed, label=Data, fit=(input) (cleaning)
@@ -283,7 +283,7 @@
 		\item{Incorrect}
 			\begin{itemize}
 				\item{Logically - invalid data}
-				\item{Syntactically - bad formatting}
+				\item{Syntactically - incorrect formatting}
 			\end{itemize}
 		\item{Duplicated}
 		\item{Corrupted}
@@ -300,9 +300,83 @@
 	\end{figure}
 
 	\begin{itemize}
-		\item{Converting between different types}
-		\item{Ordinality - ordering of values}
+		\item{Transforming the data to manipulate it for specific needs}
+			\begin{itemize}
+				\item{Encoding - label or onehot for
+					categorical values}
+				\item{Most models only understand numerical
+					values - need to convert strings,
+					images, etc. to a numerical
+					representation}
+			\end{itemize}
+		\item{Normalising data for efficiency/accuracy}
+		\item{Feature extraction for selecting/extracting important
+			features from the dataset}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Modelling - Choosing a Model}
+
+	\begin{figure}
+		\begin{tikzpicture}
+			\duck[xshift=-60pt, signpost=A]
+			\duck[xshift=60pt, signpost=B]
+		\end{tikzpicture}
+	\end{figure}
+
+	The model we choose is heavily dependent on the \textit{problem we are trying
+	to solve} - making a classifier is very different to learning a policy!
+
+	\vspace{0.5cm}
+
+	Other factors include:
+	\begin{itemize}
+		\item{Speed - how long does it take to train a model?}
+		\item{Behaviour - how does the model work? How does this affect
+			speed/accuracy/precision/etc.?}
+		\item{Data - is the model suited to the data we are using?}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\(k\)Nearest eighbours - Introduction}
+
+	% tikz diagram showing points in space (some red/blue, one empty - input)
+
+	\textit{General method}: use the \(k\) nearest "neighbours" in \(n\)
+	dimensional space to calculate the class of new data.
+
+	\vspace{0.5cm}
+
+	Questions:
+	\begin{itemize}
+		\item{How to choose \(k\)?}
+		\item{How to calculate distance?}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\(k\) Nearest Neighbours - Calculating distance}
+	
+	% discuss euclidean vs manhattan distance
+	% discuss weighting - points which are closer to input should count
+	% more compared with points which are further away
+\end{frame}
+
+\begin{frame}
+	\frametitle{\(k\) Nearest Neighbours - Selecting \(k\)}
+
+	% discuss even vs odd k
+	% discuss elbow method for choosing k
+\end{frame}
+
+\begin{frame}
+	\frametitle{\(k\) Nearest Neighbours - Evaluation}
+
+	% leave blank - will discuss at the end
+\end{frame}
+
+
 
 \end{document}
